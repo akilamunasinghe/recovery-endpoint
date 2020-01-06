@@ -65,7 +65,9 @@
         function setCookieByParam() {
             var urlParams = new URLSearchParams(window.location.search);
             var locale = urlParams.get("lang");
-            document.cookie = "lang=" + locale + "; path=/;";
+            if (locale) {
+                document.cookie = "lang=" + locale + "; path=/;";
+            }
         }
     </script>
     <!-- header -->
